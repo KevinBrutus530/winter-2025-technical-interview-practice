@@ -12,6 +12,12 @@
  */
 function isPalindrome(str) {
   // your code here
+  // replace non-alphanumeric characters and spaces then convert to lowercase for case-sensitive purposes
+  if (typeof str !== "string") return "Not a string, please use a valid input";
+  let strAN = str.replace(/\W/g, "").toLowerCase();
+
+  // check that it is equal when reversed
+  return strAN === strAN.split("").reverse().join("");
 }
 
 module.exports = isPalindrome;
