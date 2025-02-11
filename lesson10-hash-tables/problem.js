@@ -9,6 +9,21 @@
  */
 const twoSum = (nums, target) => {
   // Your code here
+  let map = {};
+  // let arr = [];
+  for (let i = 0; i < nums.length; i++) {
+    map[nums[i]] = i;
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    let diff = target - nums[i];
+    if (map[diff] !== undefined && map[diff] !== i) {
+      return [i, map[diff]]
+      // arr.push(i);
+      // arr.push(map[diff]);
+    }
+  }
+  return [];
 };
 
 module.exports = twoSum;
